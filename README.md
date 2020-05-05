@@ -11,14 +11,14 @@ Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
 6. Solution 'UVSproject' -> Build
 7. Creating database: 
 click on server you want to create database then on Databases folder with right button and selects "Add new database". Name it as you want.
-(https://i.imgur.com/ayzCAMF.png)
-(https://i.imgur.com/iWXOdE9.png)
+![Creating_Database1](https://i.imgur.com/ayzCAMF.png)
+![Creating_Database2](https://i.imgur.com/iWXOdE9.png)
 
 8. Now you need to create your local database and publish *.sql files located at database project. UVSproject -> App.config.
 As data source write your own MSSQL server name in my example it is DESKTOP-KUQ9J0B (yours might be different). Then write your created database name for initial catalog (in my example it is UVS_TestDatabase1)
 ![Publishing database](https://i.imgur.com/6ZkMyOO.png)
 Then go to script UVSproject -> ShopModel.edmx.sql change name near USE keyword to which in previous file set as your initial catalog and click execute script button.
-(https://i.imgur.com/QlqsJuq.png)
+![Creating_Database3](https://i.imgur.com/QlqsJuq.png)
 
 9. Run the project.
 
