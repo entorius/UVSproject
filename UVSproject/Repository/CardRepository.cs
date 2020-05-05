@@ -19,7 +19,7 @@ namespace UVSproject.Repository
             var card = new Card()
             {
                 Id = newId,
-                CardId = "123584695",
+                CardId = cardId,
                 
             };
             context.Card.Add(card);
