@@ -9,13 +9,20 @@
 Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r 
 ```
 6. Solution 'UVSproject' -> Build
-7. Now you need to create your local database and publish *.sql files located at database project. DevBridgeDB project -> Publish. Click 'Edit' as shown in image. If "Data storage and processing" is installed you should have active database server something like "(localdb)\MSSQLLocalDB" - select it from the list. Set Database Name to your own liking and click 'Ok'. Then clisk button "Load values". Than near variable "UseTestData" will show up value "false". If you want to load test data into database tables change to "true", otherwise keep "false". Then click button 'Publish'. You can optionally create a profile for easy click-to-publish script. ![Publishing database](https://i.imgur.com/6ZkMyOO.png)
-8. Finally, link DevBridgeAPI project with your newly created database by modifying Web.Config file. Locate this snippet (insert if its not there):
-<connectionStrings>
-    <add name="DevBridgeDB" connectionString="Server=<server name>;Database=<database name>;Trusted_Connection=True;" />
-</connectionStrings>
-and modify 'connectionString' attribute by copying your own server and database names similarly how its displayed in this image:
+7. Creating database: 
+click on server you want to create database then on Databases folder with right button and selects "Add new database". Name it as you want.
+(https://i.imgur.com/ayzCAMF.png)
+(https://i.imgur.com/iWXOdE9.png)
 
-Server with database names
+8. Now you need to create your local database and publish *.sql files located at database project. UVSproject -> App.config.
+As data source write your own MSSQL server name in my example it is DESKTOP-KUQ9J0B (yours might be different). Then write your created database name for initial catalog (in my example it is UVS_TestDatabase1)
+![Publishing database](https://i.imgur.com/6ZkMyOO.png)
+Then go to script UVSproject -> ShopModel.edmx.sql change name near USE keyword to which in previous file set as your initial catalog and click execute script button.
+(https://i.imgur.com/QlqsJuq.png)
 
-9. Run the project and test the API with ./help and ./api/users (should return an empty list)
+9. Run the project.
+
+
+In project: 
+- Button with name "Server Requests" takes you to the window where you can create objects of database.
+- Button with name "Buy Items" takes you to the window where you can buy products which you have created.
